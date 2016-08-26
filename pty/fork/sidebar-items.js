@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Fork",""],["ForkError","The enum `ForkError` defines the possible errors from constructor Fork."]],"type":[["Result","The alias `Result` learns `ForkError` possibility."]]});
