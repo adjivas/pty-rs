@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["fork",""]]});
+initSidebarItems({"mod":[["fork",""],["prelude",""]]});

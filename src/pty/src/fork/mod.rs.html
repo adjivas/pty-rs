@@ -183,8 +183,8 @@
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>ffi</span>::<span class='ident'>CString</span>;
 
 <span class='kw'>use</span> ::<span class='ident'>descriptor</span>::<span class='ident'>Descriptor</span>;
-
-<span class='kw'>use</span> <span class='self'>self</span>::<span class='ident'>pty</span>::{<span class='ident'>Master</span>, <span class='ident'>Slave</span>};
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='self'>self</span>::<span class='ident'>pty</span>::{<span class='ident'>Master</span>, <span class='ident'>MasterError</span>};
+<span class='kw'>use</span> <span class='self'>self</span>::<span class='ident'>pty</span>::<span class='ident'>Slave</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='self'>self</span>::<span class='ident'>err</span>::{<span class='ident'>ForkError</span>, <span class='prelude-ty'>Result</span>};
 
 <span class='kw'>use</span> ::<span class='ident'>libc</span>;
