@@ -139,6 +139,8 @@
 <span id="95">95</span>
 <span id="96">96</span>
 <span id="97">97</span>
+<span id="98">98</span>
+<span id="99">99</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! # PTY</span>
 <span class='doccomment'>//!</span>
@@ -169,7 +171,7 @@
 <span class='doccomment'>//! </span>
 <span class='doccomment'>//! ```toml</span>
 <span class='doccomment'>//! [dependencies]</span>
-<span class='doccomment'>//! pty = &quot;0.1&quot;</span>
+<span class='doccomment'>//! pty = &quot;0.2&quot;</span>
 <span class='doccomment'>//! ```</span>
 <span class='doccomment'>//! </span>
 <span class='doccomment'>//! and this to your crate root:</span>
@@ -183,20 +185,22 @@
 <span class='doccomment'>//! This function returns `pty::Child`. It represents the child process and its PTY.</span>
 <span class='doccomment'>//! </span>
 <span class='doccomment'>//! For example, the following code spawns `tty(1)` command by `pty::fork()` and outputs the result of the command.</span>
+<span class='doccomment'>//!</span>
 <span class='doccomment'>//! ```rust</span>
 <span class='doccomment'>//! extern crate pty;</span>
 <span class='doccomment'>//! extern crate libc;</span>
-<span class='doccomment'>//! </span>
+<span class='doccomment'>//!</span>
 <span class='doccomment'>//! use std::ffi::CString;</span>
 <span class='doccomment'>//! use std::io::Read;</span>
 <span class='doccomment'>//! use std::ptr;</span>
 <span class='doccomment'>//! </span>
 <span class='doccomment'>//! use pty::fork::*;</span>
+<span class='doccomment'>//!</span>
 <span class='doccomment'>//! fn main() {</span>
 <span class='doccomment'>//!   let fork = Fork::from_ptmx().unwrap();</span>
 <span class='doccomment'>//! </span>
 <span class='doccomment'>//!   if let Some(mut master) = fork.is_father().ok() {</span>
-<span class='doccomment'>//! #   // Read output via PTY master</span>
+<span class='doccomment'>//!     // Read output via PTY master</span>
 <span class='doccomment'>//!     let mut output = String::new();</span>
 <span class='doccomment'>//! </span>
 <span class='doccomment'>//!     match master.read_to_string(&amp;mut output) {</span>
@@ -206,7 +210,7 @@
 <span class='doccomment'>//!     let _ = fork.wait();</span>
 <span class='doccomment'>//!   }</span>
 <span class='doccomment'>//!   else {</span>
-<span class='doccomment'>//! #   // Child process just exec `tty`</span>
+<span class='doccomment'>//!     // Child process just exec `tty`</span>
 <span class='doccomment'>//!     let cmd  = CString::new(&quot;tty&quot;).unwrap().as_ptr();</span>
 <span class='doccomment'>//!     let args = [cmd, ptr::null()].as_mut_ptr();</span>
 <span class='doccomment'>//! </span>
